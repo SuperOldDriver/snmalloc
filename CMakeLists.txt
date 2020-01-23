@@ -149,6 +149,7 @@ if(NOT DEFINED SNMALLOC_ONLY_HEADER_LIBRARY)
       target_compile_definitions(${name} PRIVATE "SNMALLOC_EXPORT=__attribute__((visibility(\"default\")))")
     endif()
     set_target_properties(${name} PROPERTIES CXX_VISIBILITY_PRESET hidden)
+    install(TARGETS ${name} DESTINATION ${CMAKE_INSTALL_PREFIX})
 
     if(EXPOSE_EXTERNAL_PAGEMAP)
       if(MSVC)
